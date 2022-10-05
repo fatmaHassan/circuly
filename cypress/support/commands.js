@@ -23,3 +23,23 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+/*Cypress.Commands.add(
+    'loginByAuth0Api',
+    () => {
+
+        cy.request({
+            method: 'POST',
+            url: Cypress.env('backend_login_url'),
+            body: {"email":Cypress.env('existing_test_user_email'), "password":Cypress.env('existing_test_user_password')},
+        }).then((res) => {
+            // If successful, check to make sure usernames match
+
+            // Set the cookie value for dolthubToken
+            cy.setCookie("auth._refresh_token.laravelJWT", res.body.token);
+            window.localStorage.setItem('auth0Cypress', JSON.stringify(item))
+
+            cy.visit('/')
+        })
+    }
+)*/
