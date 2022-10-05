@@ -7,12 +7,9 @@ describe('Circuly Test Case', () => {
         cy.get('[data-test-id="field-email"]').type(Cypress.env('existing_test_user_email'))
         cy.get('[data-test-id="field-password"]').type(Cypress.env('existing_test_user_password'))
         cy.get('[data-test-id="form-submit"]').click()
-
-    })
-
-    it('Successful login redirects to dashboard', () => {
         cy.url().should('include', Cypress.env('dashboard_url'));
     })
+
 
     it('customer table tests', () => {
         cy.visit(Cypress.env('customers_url'))
